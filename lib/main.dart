@@ -27,8 +27,11 @@ class Weather {
   }
 }
 class Main extends StatelessWidget {
+  var date = new DateTime.now();
   Widget build(BuildContext context) {
-    return new Column(
+    return new Container(
+        color: Colors.white,
+        child: Column(
       children: [
         new Container(
           height: 50,
@@ -51,7 +54,7 @@ class Main extends StatelessWidget {
                   ),
                   new Icon(
                     Icons.wb_sunny,
-                    color: Colors.blueAccent,
+                    color: Colors.black,
                     size: 15.0,
                   ),
                 ],
@@ -94,11 +97,11 @@ class Main extends StatelessWidget {
                 ),
                 new Expanded(
                   child: new Text(
-                    '27 June 2019',
+                    date.toString(),
                     style: TextStyle(
                         fontSize: 15.0,
                         fontWeight: FontWeight.normal,
-                        color: Colors.grey),
+                        color: Colors.black38),
                   ),
                   flex: 4,
                 ),
@@ -110,14 +113,11 @@ class Main extends StatelessWidget {
             ))
           ],
         ),
-        new Container(
-          height: 5,
-        ),
         new Center(
-            child: new Image.asset('images/clouds.png', width: 150, height: 150,),),
+            child: new Image.asset('images/sea.gif', width: 500, height: 300,),),
         new WeatherInfo('None', 'None', 'None', 'None'),
       ],
-    );
+    ));
   }
 }
 
@@ -166,7 +166,7 @@ class NewWeatherState extends State<WeatherInfo> {
           child: new Text(
               '$_temp°',
               style: TextStyle(
-                fontSize: 32.0,
+                fontSize: 35.0,
                 fontWeight: FontWeight.w500,
                 color: Colors.black),
           ),
@@ -177,7 +177,7 @@ class NewWeatherState extends State<WeatherInfo> {
         style: TextStyle(
         fontSize: 15.0,
         fontWeight: FontWeight.w300,
-        color: Colors.indigo),
+        color: Colors.black38),
                     ),
         ),
         new Container(height: 20,),
@@ -222,21 +222,21 @@ class NewWeatherState extends State<WeatherInfo> {
               style: TextStyle(
                   fontSize: 12.0,
                   fontWeight: FontWeight.w400,
-                  color: Colors.grey),
+                  color: Colors.black38),
             )), flex: 3,),
             new Expanded(child: new Center( child : Text(
               'Humidity',
               style: TextStyle(
                   fontSize: 12.0,
                   fontWeight: FontWeight.w400,
-                  color: Colors.grey),
+                  color: Colors.black38),
             )), flex: 2,),
             new Expanded(child: new  Center( child: Text(
               'Maximum',
               style: TextStyle(
                   fontSize: 12.0,
                   fontWeight: FontWeight.w400,
-                  color: Colors.grey),
+                  color: Colors.black38),
             )), flex: 3,),
             new Expanded(child: new Text(
               '',
@@ -246,8 +246,8 @@ class NewWeatherState extends State<WeatherInfo> {
         ),
         new RaisedButton(
           onPressed: pressBtn,
-          child: new Text('UPDATE DATA', style: TextStyle(color: Colors.white,  fontWeight: FontWeight.w400),),
-          color: Colors.lightBlueAccent,
+          child: new Text('UPDATE DATA', style: TextStyle(color: Colors.white),),
+          color: Colors.deepOrange,
         ),
       ],
     );
